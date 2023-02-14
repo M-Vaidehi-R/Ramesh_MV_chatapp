@@ -26,6 +26,10 @@ io.on('connection', (socket) => {
   console.log('a user connected');
   socket.emit('connected', { sID: socket.id, message: 'new connection' });
 
+  socket.on('disconnect', ()=>{
+    console.log('user disconnected');
+  } )
+
   // listen for incoming messages from ANYone connected to the chat service
   // and then see what that message is
   socket.on('chat_message', function(msg) { // step one - receive the message

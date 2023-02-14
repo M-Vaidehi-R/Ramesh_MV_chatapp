@@ -9,17 +9,21 @@
     <title>Chat</title>
 </head>
 <body>
-    <h1 id="main-headline">Chat App</h1>
+    <h1 hidden id="main-headline">Chat App</h1>
+
+    <div>
+        <p id="joined"></p>
+    </div>
 
     <main id="app">
         <section>
             <h2>Input messages here:</h2>
-            <input id="nickname" v-model="nickname" type="text" placeholder="Nickname?">
+          <input id="nickname" v-model="nickname" type="text" placeholder="Nickname?">    <!-- this nickname is passed -->
             
-            <form>
-                <label for="message">Something to say?</label>
+            <form id="message-form">
+                <label for="message">Text below </label>
                 <textarea @focus="catchTextFocus" v-model="message" id="textarea" class="message" autocomplete="off"></textarea>
-                <input @click.prevent="dispatchMessage" type="submit" value="Send">
+                <input @click.prevent="dispatchMessage" type="submit" value="Send">  <!--prevent: only work when u click on submit, not on any other-->
             </form>
         </section>
 
@@ -31,6 +35,11 @@
             </ul>
         </section>
     </main>
+
+    <div>
+        <p id="is-typing"></p>
+    </div>
+    <audio id="notification-sound" src="/audios/effect.mp3"></audio>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 

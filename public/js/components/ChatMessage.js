@@ -15,7 +15,8 @@ export default {
             // every time an incoming message arrives, check against the user Id to see if this is ours.
             // if it IS, apply a CSS class to indicate that it's ours
             // if it ISN'T, apply a different CSS class to make that obvious
-            matchedID: this.$parent.socketID == this.message.id
+            matchedID: this.$parent.socketID == this.message.id    //function checking the above thing
+            //the $parent property can be used to access the parent instance from a child.
         }
     }
 }
