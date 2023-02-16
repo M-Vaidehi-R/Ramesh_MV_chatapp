@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="css/main.css">    
-    <title>Chat</title>
+    <title>ChatApp :></title>
 </head>
 <body>
     <h1 hidden id="main-headline">Chat App</h1>
@@ -15,12 +15,15 @@
         <p id="joined"></p>
     </div>
 
+    <div id="avatarcontainer" style="width:100px;height:100px;"></div> 
+           
     <main id="app">
         <section>
+
+            <!-- //<loginUser>Hello</loginUser> -->
             <h2>Input messages here:</h2>
-          <input id="nickname" v-model="nickname" type="text" placeholder="Nickname?">    <!-- this nickname is passed -->
-            
-            <form id="message-form">
+          <input id="nickname" v-model="nickname" v-on:keyup.enter="updateavatar" type="text" placeholder="Nickname?">    <!-- this nickname is passed -->
+          <form id="message-form">
                 <label for="message">Text below </label>
                 <textarea @focus="catchTextFocus" v-model="message" id="textarea" class="message" autocomplete="off"></textarea>
                 <input @click.prevent="dispatchMessage" type="submit" value="Send">  <!--prevent: only work when u click on submit, not on any other-->
@@ -36,11 +39,13 @@
         </section>
     </main>
 
+ 
     <div>
         <p id="is-typing"></p>
     </div>
     <audio id="notification-sound" src="/audios/effect.mp3"></audio>
 
+    <script src="https://cdn.jsdelivr.net/npm/@multiavatar/multiavatar/multiavatar.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <script src="/socket.io/socket.io.js"></script>
