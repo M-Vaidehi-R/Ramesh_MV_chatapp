@@ -4,7 +4,6 @@ export default {
 
     template: `
     <article class="chat-messages" :class="{ 'other-messages' : matchedID }">
-    <div id="avatarcontainer" style="width:100px;height:100px;"></div> 
         <h2>{{ message.name }} says:</h2>
         <p>{{ message.content }}</p>
     </article>

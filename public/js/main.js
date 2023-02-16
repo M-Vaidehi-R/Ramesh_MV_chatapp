@@ -32,6 +32,10 @@ function showNewMessage({ message }) {
 function handleUserTyping(user) {
     console.log(user.currentlytyping.name,' is typing something');
     Typing.innerHTML=`${user.currentlytyping.name} is typing something`;
+
+    setTimeout(() => {
+        Typing.innerHTML=" ";
+    }, "3000");
 }
 
 
