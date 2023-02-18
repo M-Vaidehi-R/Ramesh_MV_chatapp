@@ -1,0 +1,78 @@
+
+#message-form {
+    textarea{
+    display: block;
+    margin-block:1rem;
+    margin-left: 5rem;
+    background-color: $text-bg;
+    color: $text;
+    width:25rem;
+    height:25rem;
+    border-radius:.5rem ;
+    font-size: x-large;
+    }
+
+    input{
+        display: block;
+        margin-block:1rem;
+        margin-left: 5rem;
+        color: $text;
+        width:5rem;
+        height: 2rem;
+        border-radius: .5rem;
+        font-size:large;
+    }
+}
+
+#chatting{
+    display: flex;
+    flex-direction: row;
+    gap: 15rem;
+    justify-content: center;
+}
+
+#is-typing{
+    text-align: center ;
+    font-size: larger;
+}
+
+#messages{
+    border: $text-bg solid 5px;
+    border-radius: .5rem;
+    width: 25rem;
+    height:25rem;
+    margin-top: 1rem;
+}
+
+#nickname{
+ 
+    font-size:medium;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $text;
+
+}
+
+#Username{
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $text-bg;
+}
+
+.chat-messages {
+    width: 45%;
+    border-radius: 1em;
+    padding: .5em 1em;
+    margin-top: .25rem;
+    background-color: rgba(242, 35, 115, 0.8);
+    margin-bottom: 0.8em;
+    float: left;
+    clear: both;
+}
+
+.other-messages {
+    background-color: rgba(23, 107, 251, 0.98);
+    float: right;
+}

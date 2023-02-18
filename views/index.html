@@ -4,10 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/main.css">    
+    <title>ChatApp :></title>
 </head>
 <body>
-    <h1>Hello</h1>
-    <a href="chat.html">Go to chat App</a>
+    <h1 hidden id="main-headline">Chat App</h1>
+
+    <section class="header">
+        <img class="logo" src="./images/chat_app_logo.png" alt="logo">
+        <div id="avatar">
+        <div id="avatarcontainer" style="width:110px;height:auto;"></div> 
+        <h2 id="Username"></h2>
+        </div>
+    </section>
+  
+           
+    <main id="app">
+        <div id="usernameEnter">
+        <h2>Nickname:</h2>
+        <input id="nickname" v-model="nickname" v-on:keyup.enter="updateavatar" type="text" placeholder="Press Enter afterwards">    <!-- this nickname is passed -->
+        </div>   
+
+        <div id="chatting">
+        <section class="texting">  
+            <h2 hidden>messages</h2>
+            <form id="message-form">
+                  <label for="message" hidden>ChatApp</label>
+                  <textarea @focus="catchTextFocus" v-model="message" id="textarea" class="message" autocomplete="off" placeholder="Type Here..."></textarea>
+                  <input @click.prevent="dispatchMessage" type="submit" value="Shoot!">  <!--prevent: only work when u click on submit, not on any other-->
+              </form>
+        </section>
+
+        <section class="messages">
+            <h2 hidden>Receive messages here:</h2>
+            <ul id="messages">
+                <!-- render a new message component for every message -->
+                <newmsg v-for="message in messages" :message="message"></newmsg>
+            </ul>
+        </section>
+        </div>
+
+
+    </main>
+
+    <div>
+        <p id="is-typing"></p>
+    </div>
+
+    <audio id="notification-sound" src="/audios/effect.mp3"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/@multiavatar/multiavatar/multiavatar.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js" type="module" defer></script>
 </body>
 </html>

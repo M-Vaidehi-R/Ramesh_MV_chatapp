@@ -1,0 +1,50 @@
+
+body{
+background-image: url("../images/background6.jpg");
+color:white;
+}
+
+.logo{
+    width: 260px;
+    height: auto;
+}
+
+.header{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+#usernameEnter{
+    margin: 3rem 3rem 3rem 7rem;
+    
+    input{
+    display: inline-block;
+    background-color: $text-bg;
+    height: 2rem;
+    width: 16rem;
+    border-radius: .3rem;
+    margin-left: 1rem;
+    }
+    h2{
+        display: inline-block;
+    }
+}
+
+#nickname{
+    margin: auto;
+}
+
+#avatar{
+    display: none;
+    border: $text-bg solid 4px;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+#Username{
+
+    font-size: medium;
+}

@@ -9,6 +9,10 @@ import ChatMsg from './components/ChatMessage.js';
 var Typing= document.getElementById("is-typing");
 var Joined= document.getElementById("joined");
 var avatar = document.querySelector("#avatarcontainer");
+var username = document.querySelector("#Username");
+var nicknameEnter = document.querySelector("#usernameEnter");
+var avatarbox = document.querySelector("#avatar");
+var logo = document.querySelectorAll(".logo");
 var total_members= 0;
 //var Name = document.getElementById("nickname");
 const msgNot = document.getElementById("notification-sound");
@@ -35,7 +39,7 @@ function handleUserTyping(user) {
 
     setTimeout(() => {
         Typing.innerHTML=" ";
-    }, "3000");
+    }, "2000");
 }
 
 
@@ -66,6 +70,9 @@ const vm = createApp({
              if(this.nickname){
                  var svg = multiavatar(this.nickname);
                  avatar.innerHTML = svg;
+                 username.innerHTML= this.nickname;
+                 avatarbox.style.display = "block";
+                 logo.style.width = "315px";
                  //debugger;
               }
              //else {
